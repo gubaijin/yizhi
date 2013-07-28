@@ -1,0 +1,88 @@
+﻿{% extends 'layout.html' %}
+
+{% block head %}
+  <link href="stylesheets/codemirror.css" rel="stylesheet">
+  <script type="text/javascript" src="javascripts/codemirror-compressed.js"></script>
+
+  {% if editorTheme != "default" %}
+  <link href="stylesheets/theme/{{ editorTheme }}.css" rel="stylesheet">
+  {% endif %}
+
+  <style type="text/css">
+    .CodeMirror-scroll {
+      height: auto;
+      overflow-y: hidden;
+      overflow-x: auto;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
+
+{% block content %}
+
+
+  <br /><br />
+<div class="span7">
+   <form class="form-horizontal" method="post" action="/signup">
+ <fieldset> 
+          <div class="control-group">  
+            <label class="control-label" for="input01">用户名</label>  
+            <div class="controls">  
+              <input type="text" class="input-large" id="input01">  
+              <p class="help-inline">输入合法的用户名.</p>  
+            </div>  
+          </div>  
+          <div class="control-group">  
+            <label class="control-label" for="input01">邮箱</label>  
+            <div class="controls">  
+              <input type="text" class="input-large" id="input01">  
+              <p class="help-inline">输入Email.</p>  
+            </div>  
+          </div>  
+          <div class="control-group">  
+            <label class="control-label" for="input01">密码</label>  
+            <div class="controls">  
+              <input type="text" class="input-large" id="input01">  
+              <p class="help-inline">输入密码，请牢记.</p>  
+            </div>  
+          </div>
+		  
+		  <div class="control-group">  
+            <label class="control-label" for="input01">确认密码</label>  
+            <div class="controls">  
+              <input type="text" class="input-large" id="input01">  
+              <p class="help-inline">确认密码.</p>  
+            </div>  
+          </div>
+		  
+          <div class="control-group">  
+            <label class="control-label" for="optionsCheckbox"></label>  
+            <div class="controls">  
+              <label class="checkbox">  
+                <input type="checkbox" id="optionsCheckbox" value="option1">  
+                同意我们的<a href="/serviceterm">服务条款 </a>
+              </label>  
+            </div>  
+          </div> 
+		  
+          <div class="span1 offset2">
+            <button type="submit" class="btn btn-primary" disabled>提交</button>  
+          </div>
+           
+        </fieldset>  
+</form> 
+</div>
+
+
+<div class="span2">
+ <div class="control-group">  
+   <legend >已有账号？</legend>  
+   现在<a href="/signin">登录</a>      
+</div> 
+
+<script>
+  
+</script>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+﻿{% extends 'layout.html' %}
+
+{% block head %}
+  <link href="stylesheets/codemirror.css" rel="stylesheet">
+  <script type="text/javascript" src="javascripts/codemirror-compressed.js"></script>
+
+  {% if editorTheme != "default" %}
+  <link href="stylesheets/theme/{{ editorTheme }}.css" rel="stylesheet">
+  {% endif %}
+
+  <style type="text/css">
+    .CodeMirror-scroll {
+      height: auto;
+      overflow-y: hidden;
+      overflow-x: auto;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
+
+{% block content %}
+
+
+  <br /><br />
+<div class="span7">
+   <form class="form-horizontal" method="post" action="/signin">
+ <fieldset> 
+          <div class="control-group">  
+            <label class="control-label" for="input01">用户名</label>  
+            <div class="controls">  
+              <input type="text" class="input-large" id="input01">   
+            </div>  
+          </div>  
+		  
+          <div class="control-group">  
+            <label class="control-label" for="input01">密码</label>  
+            <div class="controls">  
+              <input type="text" class="input-large" id="input01">   
+            </div>  
+          </div>
+		    
+			<div class="control-group">   
+            <div class="controls"> 
+               <a href="/reset">忘记密码？ </a>
+            </div>  
+          </div> 
+		  
+          <div class="span1 offset2">
+            <button type="submit" class="btn btn-primary" disabled>登录</button>  
+          </div>
+           
+        </fieldset>  
+</form> 
+</div>
+
+
+<div class="span2">
+ <div class="control-group">  
+   <legend >没有账号?</legend>  
+   现在<a href="/signup">注册</a>      
+</div> 
+
+<script>
+  
+</script>
+
+{% endblock %}
